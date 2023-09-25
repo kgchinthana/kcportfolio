@@ -1,9 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/HomeScreen';
+import Home from './pages/HomeScreen/index';
 import * as React from 'react';
 import Navbar from './components/Home/Navbar';
 import Footer from './components/Home/Footer';
+
+
+
 
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -14,7 +17,10 @@ function App() {
         <div className='App'>
           <Navbar />
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            <Route path='/' element={<Home />} />
+          
+            
+
           </Routes>
           <Footer />
         </div>

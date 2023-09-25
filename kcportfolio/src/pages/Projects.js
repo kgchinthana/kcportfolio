@@ -48,7 +48,10 @@ function Projects() {
         marginTop={10}
         marginLeft={10}
         marginRight={10}
-        templateColumns='repeat(auto-fill, minmax(250px, 1fr))'
+        columns={{ base: 1, md: 4 }}
+        alignContent={'center'}
+        alignItems={'center'}
+        templateColumns='repeat(4, minmax(250px, 1fr))'
       >
         <Card maxW='lg'>
           <CardBody>
@@ -71,6 +74,62 @@ function Projects() {
                 <Link href='https://github.com/kgchinthana/CarCare360CRMSyestem.git'>
                   GitHub Repo
                 </Link>
+              </Button>
+              <Button variant='ghost' colorScheme='blue'>
+                More Details
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+        <Card maxW='sm'>
+          <CardBody>
+            <Image src={emailclient} alt='project gif' borderRadius='lg' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='md'>Email Client</Heading>
+              <Text>
+                The primary objective of this project was to design, develop,
+                and implement a versatile and efficient command-line-based email
+                client in Java. The project aimed to provide a comprehensive
+                email management solution with a strong focus on recipient
+                management, email sending, and automation.
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing='2'>
+              <Button variant='solid' colorScheme='blue'>
+                <Link href='https://github.com/kgchinthana/Email-Client.git'>
+                  GitHub Repo
+                </Link>{' '}
+              </Button>
+              <Button variant='ghost' colorScheme='blue'>
+                More Details
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+        <Card maxW='sm'>
+          <CardBody>
+            <Image src={emailclient} alt='project gif' borderRadius='lg' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='md'>Email Client</Heading>
+              <Text>
+                The primary objective of this project was to design, develop,
+                and implement a versatile and efficient command-line-based email
+                client in Java. The project aimed to provide a comprehensive
+                email management solution with a strong focus on recipient
+                management, email sending, and automation.
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing='2'>
+              <Button variant='solid' colorScheme='blue'>
+                <Link href='https://github.com/kgchinthana/Email-Client.git'>
+                  GitHub Repo
+                </Link>{' '}
               </Button>
               <Button variant='ghost' colorScheme='blue'>
                 More Details
