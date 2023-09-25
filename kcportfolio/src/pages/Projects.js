@@ -49,9 +49,8 @@ function Projects() {
         marginLeft={10}
         marginRight={10}
         columns={{ base: 1, md: 4 }}
-        alignContent={'center'}
-        alignItems={'center'}
-        templateColumns='repeat(4, minmax(250px, 1fr))'
+        templateColumns={{ base: 'repeat(1, minmax(250px, 1fr))', md: 'repeat(4, minmax(250px, 1fr))' }}
+
       >
         <Card maxW='lg'>
           <CardBody>
