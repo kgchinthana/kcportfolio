@@ -42,7 +42,13 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <HStack
+        bg={useColorModeValue('gray.100', 'gray.900')}
+        px={10}
+        position={'fixed'}
+        zIndex={1}
+        width={'100%'}
+      >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -52,23 +58,29 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            
-
-            <Box fontSize="2xl" marginLeft={50}>Kavindu Chinthana</Box>
+            <Box
+              fontSize={'1.5em'}
+              marginLeft={50}
+              fontWeight={'bold'}
+              fontFamily={'Playfair Display'}
+            >
+              Kavindu Chinthana
+            </Box>
             <HStack
               as={'nav'}
-              spacing={20}
-              marginLeft={500}
-
+              spacing={10}
               display={{ base: 'none', md: 'flex' }}
+              fontFamily={'Playfair Display'}
+              fontSize={'1.1em'}
+              marginLeft={100}
             >
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'}>
-          <Button onClick={toggleColorMode}>
+          <Flex alignItems={'center'} marginLeft={100} >
+            <Button onClick={toggleColorMode}>
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
           </Flex>
@@ -83,8 +95,7 @@ export default function Navbar() {
             </Stack>
           </Box>
         ) : null}
-      </Box>
-
+      </HStack>
     </>
   );
 }

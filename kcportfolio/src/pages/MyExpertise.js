@@ -11,6 +11,7 @@ import {
   ListItem,
   ListIcon,
   Image,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import backend from '../components/images/backend.png';
 import frontend from '../components/images/frontend.png';
@@ -57,14 +58,19 @@ export default function MyExperties() {
           My Expertise
         </Heading>
       </VStack>
-      <Stack
+      <SimpleGrid
         direction={{ base: 'column', md: 'row' }}
         textAlign='center'
         justify='center'
         spacing={{ base: 2, lg: 5 }}
+        templateColumns={{
+          base: 'repeat(1, minmax(200px, 1fr))',
+          md: 'repeat(3, minmax(200px, 1fr))',
+          lg: 'repeat(5, minmax(200px, 1fr))',
+        }}
         py={10}
       >
-        <PriceWrapper>
+        <PriceWrapper minH ={'4'}>
           <Box py={4} px={15}>
             <Text fontWeight='500' fontSize='2xl'>
               Back-End
@@ -239,7 +245,7 @@ export default function MyExperties() {
             </List>
           </VStack>
         </PriceWrapper>
-      </Stack>
+      </SimpleGrid>
     </Box>
   );
 }

@@ -53,19 +53,16 @@ export default function Home() {
               Get In Touch
             </Button>
             <Button rounded={"full"} >
-            <Link href='https://drive.google.com/file/d/1obeMdmsV6vPGIIf8d9L5dUzpFppEhiHI/view?usp=drive_link' isExternal textDecoration={NaN}>Get CV</Link></Button>
+            <Link href='https://drive.google.com/file/d/1obeMdmsV6vPGIIf8d9L5dUzpFppEhiHI/view?usp=sharing' isExternal textDecoration={NaN}>Get CV</Link></Button>
           </Stack>
         </Stack>
       </Flex>
-      <Flex flex={1} align={"center"}>
+      <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Image
           alt={"Login Image"}
           objectFit={"cover"}
           borderRadius='full'
           boxSize={{ base: "300px", md: "400px", lg: "500px" }}
-          align={{ base: "center", sm:  "center"}}
-          marginLeft={{ base: "45", md: "10" ,sm: "20" }}
-          // align={{ base: "center", sm:  "center"}}
           src={profile}
         />
       </Flex>

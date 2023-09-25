@@ -1,7 +1,6 @@
 import {
   Heading,
   Box,
-  VStack,
   Text,
   Button,
   Divider,
@@ -13,6 +12,7 @@ import {
   CardFooter,
   CardBody,
   Link,
+  Flex,
 } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import AOS from 'aos';
@@ -20,37 +20,38 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import carcare from '../components/gif/carcare.gif';
 import emailclient from '../components/gif/emailclient.gif';
+import rpal from '../components/gif/rpal.gif';
 function Projects() {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
   return (
     <Box py={12} data-aos='fade-up' data-aos-offset='200'>
-      <VStack spacing={2} textAlign='center'>
-        <Text fontSize='xl' color={'gray.500'}>
-          Recent Projects
-        </Text>
-        <Heading as='h2' fontSize='4xl'>
-          My Portfolio
-          <Button
-            marginLeft={{ base: '10', sm: '300' }}
-            colorScheme='twitter'
-            leftIcon={<FaGithub />}
-          >
+      <Text fontSize='xl' color={'gray.500'}>
+        Recent Projects
+      </Text>
+      <Stack direction={{ base: 'column', md: 'row' }}>
+        <Flex p={2} flex={1} align={'center'} justify={'center'}>
+          <Heading fontSize={{ base: '4xl', md: '4xl' }}>My Portfolio</Heading>
+        </Flex>
+        <Flex p={2} flex={1} align={'center'} justify={'center'}>
+          <Button colorScheme='twitter' leftIcon={<FaGithub />}>
             <Link href='https://github.com/kgchinthana?tab=repositories'>
               GitHub
             </Link>
           </Button>
-        </Heading>
-      </VStack>
-      <SimpleGrid
-        spacing={5}
-        marginTop={10}
-        marginLeft={10}
-        marginRight={10}
-        columns={{ base: 1, md: 4 }}
-        templateColumns={{ base: 'repeat(1, minmax(250px, 1fr))', md: 'repeat(4, minmax(250px, 1fr))' }}
+        </Flex>
+      </Stack>
 
+      <SimpleGrid
+        spacing={4}
+        alignItems={'center'}
+        justifyItems={'center'}
+        templateColumns={{
+          base: 'repeat(1, minmax(200px, 1fr))',
+          md: 'repeat(2, minmax(200px, 1fr))',
+          lg: 'repeat(4, minmax(200px, 1fr))',
+        }}
       >
         <Card maxW='lg'>
           <CardBody>
@@ -110,15 +111,15 @@ function Projects() {
         </Card>
         <Card maxW='sm'>
           <CardBody>
-            <Image src={emailclient} alt='project gif' borderRadius='lg' />
+            <Image src={rpal} alt='rpal gif' borderRadius='lg' />
             <Stack mt='6' spacing='3'>
-              <Heading size='md'>Email Client</Heading>
+              <Heading size='md'>RPAL Interpreter</Heading>
               <Text>
-                The primary objective of this project was to design, develop,
-                and implement a versatile and efficient command-line-based email
-                client in Java. The project aimed to provide a comprehensive
-                email management solution with a strong focus on recipient
-                management, email sending, and automation.
+                The RPAL compiler project is focused on creating a robust tool
+                for developers to work with the RPAL programming language. RPAL
+                is a language that requires a compiler to convert its code into
+                executable instructions. We implemented a lexical analyzer and
+                parser for the RPAL programming language
               </Text>
             </Stack>
           </CardBody>
@@ -126,7 +127,7 @@ function Projects() {
           <CardFooter>
             <ButtonGroup spacing='2'>
               <Button variant='solid' colorScheme='blue'>
-                <Link href='https://github.com/kgchinthana/Email-Client.git'>
+                <Link href='https://github.com/kgchinthana/RPAL-Interpreter.git'>
                   GitHub Repo
                 </Link>{' '}
               </Button>
@@ -140,13 +141,13 @@ function Projects() {
           <CardBody>
             <Image src={emailclient} alt='project gif' borderRadius='lg' />
             <Stack mt='6' spacing='3'>
-              <Heading size='md'>Email Client</Heading>
+              <Heading size='md'>Airline Reservation System</Heading>
               <Text>
-                The primary objective of this project was to design, develop,
-                and implement a versatile and efficient command-line-based email
-                client in Java. The project aimed to provide a comprehensive
-                email management solution with a strong focus on recipient
-                management, email sending, and automation.
+                We designed and implemented a comprehensive database system for
+                airline reservation system. The system allows passengers to book
+                flights online and provides various features, including seat
+                selection, discounts for registered users and dynamic pricing
+                based on traveler class.
               </Text>
             </Stack>
           </CardBody>
@@ -154,7 +155,7 @@ function Projects() {
           <CardFooter>
             <ButtonGroup spacing='2'>
               <Button variant='solid' colorScheme='blue'>
-                <Link href='https://github.com/kgchinthana/Email-Client.git'>
+                <Link href='https://github.com/kgchinthana/AirlineReservationSystem.git'>
                   GitHub Repo
                 </Link>{' '}
               </Button>
