@@ -11,7 +11,6 @@ import {
   ListItem,
   ListIcon,
   Image,
-  SimpleGrid,
 } from '@chakra-ui/react';
 import backend from '../components/images/backend.png';
 import frontend from '../components/images/frontend.png';
@@ -41,6 +40,9 @@ function PriceWrapper(props) {
       alignSelf={{ base: 'center', lg: 'flex-start' }}
       borderColor={useColorModeValue('gray.200', 'gray.500')}
       borderRadius={'xl'}
+      height="350" // Set a fixed height for the Box
+      width="60"
+
     >
       {children}
     </Box>
@@ -58,19 +60,14 @@ export default function MyExperties() {
           My Expertise
         </Heading>
       </VStack>
-      <SimpleGrid
+      <Stack
         direction={{ base: 'column', md: 'row' }}
         textAlign='center'
         justify='center'
         spacing={{ base: 2, lg: 5 }}
-        templateColumns={{
-          base: 'repeat(1, minmax(200px, 1fr))',
-          md: 'repeat(3, minmax(200px, 1fr))',
-          lg: 'repeat(5, minmax(200px, 1fr))',
-        }}
         py={10}
       >
-        <PriceWrapper minH ={'4'}>
+        <PriceWrapper>
           <Box py={4} px={15}>
             <Text fontWeight='500' fontSize='2xl'>
               Back-End
@@ -87,8 +84,10 @@ export default function MyExperties() {
           </Box>
           <VStack
             bg={useColorModeValue('gray.50', 'gray.700')}
-            py={4}
+            height={'206'}
+            py={11}
             borderBottomRadius={'xl'}
+            flex={1} // Make the VStack fill the entire height of the Box
           >
             <List spacing={3} textAlign='start' px={12}>
               <ListItem>
@@ -121,8 +120,10 @@ export default function MyExperties() {
             </Box>
             <VStack
               bg={useColorModeValue('gray.50', 'gray.700')}
-              py={4}
+              height={'206'}
+              py={11}
               borderBottomRadius={'xl'}
+              flex={1} // Make the VStack fill the entire height of the Box
             >
               <List spacing={3} textAlign='start' px={12}>
                 <ListItem>
@@ -162,8 +163,10 @@ export default function MyExperties() {
           </Box>
           <VStack
             bg={useColorModeValue('gray.50', 'gray.700')}
-            py={4}
+            height={'206'}
+            py={11}
             borderBottomRadius={'xl'}
+            flex={1} // Make the VStack fill the entire height of the Box
           >
             <List spacing={3} textAlign='start' px={12}>
               <ListItem>
@@ -190,8 +193,10 @@ export default function MyExperties() {
           </Box>
           <VStack
             bg={useColorModeValue('gray.50', 'gray.700')}
-            py={4}
+            height={'206'}
+            py={11}
             borderBottomRadius={'xl'}
+            flex={1} // Make the VStack fill the entire height of the Box
           >
             <List spacing={3} textAlign='start' px={12}>
               <ListItem>
@@ -233,9 +238,11 @@ export default function MyExperties() {
             </HStack>
           </Box>
           <VStack
-            bg={useColorModeValue('gray.50', 'gray.700')}
-            py={4}
-            borderBottomRadius={'xl'}
+           bg={useColorModeValue('gray.50', 'gray.700')}
+           height={'206'}
+           py={11}
+           borderBottomRadius={'xl'}
+           flex={1} // Make the VStack fill the entire height of the Box
           >
             <List spacing={3} textAlign='start' px={12}>
               <ListItem>
@@ -245,7 +252,7 @@ export default function MyExperties() {
             </List>
           </VStack>
         </PriceWrapper>
-      </SimpleGrid>
+      </Stack>
     </Box>
   );
 }

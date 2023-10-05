@@ -20,7 +20,10 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import carcare from '../components/gif/carcare.gif';
 import emailclient from '../components/gif/emailclient.gif';
+import POS from '../components/gif/pos.gif';
 import rpal from '../components/gif/rpal.gif';
+import kcmail from '../components/gif/kcmail.gif';
+import airline from '../components/images/airline.jpg';
 function Projects() {
   useEffect(() => {
     AOS.init({ duration: 2000 });
@@ -50,10 +53,10 @@ function Projects() {
         templateColumns={{
           base: 'repeat(1, minmax(200px, 1fr))',
           md: 'repeat(2, minmax(200px, 1fr))',
-          lg: 'repeat(4, minmax(200px, 1fr))',
+          lg: 'repeat(3, minmax(200px, 1fr))',
         }}
       >
-        <Card maxW='lg'>
+          <Card  maxW='sm' maxH='1000' height='100%'> 
           <CardBody>
             <Image src={carcare} alt='project gif' borderRadius='lg' />
             <Stack mt='6' spacing='3'>
@@ -81,7 +84,7 @@ function Projects() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm'>
+        <Card  maxW='sm' maxH='1000' height='100%'> 
           <CardBody>
             <Image src={emailclient} alt='project gif' borderRadius='lg' />
             <Stack mt='6' spacing='3'>
@@ -109,7 +112,7 @@ function Projects() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm'>
+        <Card  maxW='sm' maxH='1000' height='100%'> 
           <CardBody>
             <Image src={rpal} alt='rpal gif' borderRadius='lg' />
             <Stack mt='6' spacing='3'>
@@ -137,9 +140,9 @@ function Projects() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm'>
+        <Card  maxW='sm' maxH='1000' height='100%'> 
           <CardBody>
-            <Image src={emailclient} alt='project gif' borderRadius='lg' />
+            <Image src={airline} alt='project gif' borderRadius='lg' />
             <Stack mt='6' spacing='3'>
               <Heading size='md'>Airline Reservation System</Heading>
               <Text>
@@ -156,6 +159,64 @@ function Projects() {
             <ButtonGroup spacing='2'>
               <Button variant='solid' colorScheme='blue'>
                 <Link href='https://github.com/kgchinthana/AirlineReservationSystem.git'>
+                  GitHub Repo
+                </Link>{' '}
+              </Button>
+              <Button variant='ghost' colorScheme='blue'>
+                More Details
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+        <Card  maxW='sm' maxH='1000' height='100%'> 
+          <CardBody>
+            <Image src={POS} alt='project gif' borderRadius='lg' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='md'>Inventory Management and POS System.</Heading>
+              <Text>
+                Designed and developed a robust Inventory Management and POS
+                System for OXI CROP SCIENCE using cutting-edge technologies
+                including React, Node.js, Express.js, and MySQL database. The
+                system seamlessly integrates inventory tracking and
+                point-of-sale functionalities, providing the company with a
+                streamlined and efficient solution for managing their
+                agricultural products.
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing='2'>
+              <Button variant='solid' colorScheme='blue'>
+                <Link href='https://github.com/kgchinthana/Oxi-Crop-Science.git'>
+                  GitHub Repo
+                </Link>{' '}
+              </Button>
+              <Button variant='ghost' colorScheme='blue'>
+                More Details
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+        <Card  maxW='sm' maxH='1000' height='100%'> 
+          <CardBody>
+            <Image src={kcmail} alt='project gif' borderRadius='lg' />
+            <Stack mt='6' spacing='3'>
+              <Heading size='md'>KC Mail</Heading>
+              <Text>
+                I developed a comprehensive email client using Spring Boot for
+                the backend and React for the frontend. The application includes
+                a company management system to automate birthday wishes and
+                other email communications, enhancing internal communication and
+                fostering a positive workplace culture.
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing='2'>
+              <Button variant='solid' colorScheme='blue'>
+                <Link href='https://github.com/kgchinthana/KC-Email.git'>
                   GitHub Repo
                 </Link>{' '}
               </Button>

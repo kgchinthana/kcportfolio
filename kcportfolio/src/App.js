@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import * as React from 'react';
 import Navbar from './components/Home/Navbar';
 import Footer from './components/Home/Footer';
@@ -9,10 +9,6 @@ import AboutMe from './pages/AboutMe';
 import MyExperties from './pages/MyExpertise';
 import Projects from './pages/Projects';
 
-
-
-
-
 import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
@@ -21,11 +17,19 @@ function App() {
       <Router>
         <div className='App'>
           <Navbar />
-          <Description />
+          <section id='home-section'>
+            <Description />
+          </section>
           <MyExperties />
-          <AboutMe />
-          <Projects />
-          <Contact />
+          <section id='about-section'>
+            <AboutMe />
+          </section>
+          <section id='projects-section'>
+            <Projects />
+          </section>
+          <section id='contact-section'>
+            <Contact />
+          </section>
           <Footer />
         </div>
       </Router>

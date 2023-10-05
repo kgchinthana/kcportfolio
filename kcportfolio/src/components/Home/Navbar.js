@@ -13,10 +13,23 @@ import {
 
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const Links = ['Home', 'About', 'Projects', 'Contact'];
-
+const Links = [
+  { label: 'Home', targetId: 'home-section' },
+  { label: 'About', targetId: 'about-section' },
+  { label: 'Projects', targetId: 'projects-section' },
+  { label: 'Contact', targetId: 'contact-section' },
+];
 const NavLink = (props) => {
-  const { children } = props;
+  const { children, targetId } = props;
+  const handleClick = () => {
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <Box
@@ -28,7 +41,7 @@ const NavLink = (props) => {
         textDecoration: 'none',
         bg: useColorModeValue('gray.200', 'gray.700'),
       }}
-      href={'#'}
+      onClick={handleClick} // Call handleClick on click
     >
       {children}
     </Box>
@@ -59,7 +72,7 @@ export default function Navbar() {
           />
           <HStack spacing={8} alignItems={'center'}>
             <Box
-              fontSize={'1.5em'}
+              fontSize={['1.2em']}
               marginLeft={50}
               fontWeight={'bold'}
               fontFamily={'Playfair Display'}
@@ -68,30 +81,39 @@ export default function Navbar() {
             </Box>
             <HStack
               as={'nav'}
-              spacing={10}
+              spacing={40}
               display={{ base: 'none', md: 'flex' }}
               fontFamily={'Playfair Display'}
               fontSize={'1.1em'}
               marginLeft={100}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.label} targetId={link.targetId}>
+                  {link.label}
+                </NavLink>
               ))}
+              <Flex alignItems={'center'} marginLeft={100}>
+                <Button onClick={toggleColorMode}>
+                  {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                </Button>
+              </Flex>
             </HStack>
           </HStack>
-          <Flex alignItems={'center'} marginLeft={100} >
-            <Button onClick={toggleColorMode}>
-              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            </Button>
-          </Flex>
         </Flex>
 
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.label} targetId={link.targetId}>
+                  {link.label}
+                </NavLink>
               ))}
+              <Flex alignItems={'center'}>
+                <Button onClick={toggleColorMode}>
+                  {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                </Button>
+              </Flex>
             </Stack>
           </Box>
         ) : null}
